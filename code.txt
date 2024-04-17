@@ -1,0 +1,35 @@
+# install all the required libraries
+
+!pip install pandas
+!pip install numpy
+!pip install seaborn
+!pip install matplotlib
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#read the csv file
+data = pd.read_csv(r"C:/Users/bhagy/Documents/covid19_data/statewise_data_with_new_cases.csv")
+
+#to fetch top 5 rows
+data.head()
+
+#to fetch bottom 5 rows
+data.tail()
+
+#to fetch all the columns
+data.column()
+
+#to fetch all nulls
+data.isnull()
+
+#to describe data
+data.describe()
+
+#relplot for data vizualization
+sns.relplot(x="Confirmed",y="Cured",kind='line',data=data)
+sns.relplot(x="Confirmed",y="Cured",data=data)
+sns.relplot(x="State/UT",y="Active",data=data)
+sns.catplot(x="Confirmed",y="Active",data=data)
